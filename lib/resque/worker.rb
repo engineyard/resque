@@ -206,7 +206,7 @@ module Resque
         run_hook :before_reserve
         log! "Checking #{queue}"
         if job = Resque.reserve(queue)
-          run_hook :after_reserve
+          run_hook :after_reserve, job
           log! "Found job on #{queue}"
           return job
         end
