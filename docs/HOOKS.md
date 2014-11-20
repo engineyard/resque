@@ -80,6 +80,8 @@ The available hooks are:
 
 * `before_reserve`: Called immediately before reserving a job from the queue.
 
+* `after_reserve`: Called immediately after reserving a job from the queue.
+
 * `before_perform`: Called with the job args before perform. If it raises
   `Resque::Job::DontPerform`, the job is aborted. If other exceptions
   are raised, they will be propagated up the the `Resque::Failure`
